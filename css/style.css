@@ -62,7 +62,7 @@ body.light {
     color: var(--text);
 }
 
-body.light nav             { background: var(--nav-bg); }
+body.light nav             { background: #fef9ee; }
 body.light .menu-icon span { background: #0f172a; }
 body.light nav ul li a     { color: var(--text); }
 
@@ -139,8 +139,14 @@ nav {
     border-color: transparent;
     transform: rotate(20deg) scale(1.1);
 }
-body.light nav {
-    background: #fef9ee;
+@media (max-width: 900px) {
+    body.light .nav-links {
+        background: #fef9ee;
+    }
+
+    body.light .nav-links li a {
+        color: #0f172a;
+    }
 }
 .aa {
     text-decoration: none;
@@ -205,6 +211,7 @@ body.light .contact-links a:hover {
     color: #fef9ee;
     transform: translateY(-8px) scale(1.05);
 }
+
 /* =======================
    HAMBURGER BUTTON
 ======================= */
@@ -242,7 +249,10 @@ body.light .contact-links a:hover {
 .menu-icon.open span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
-
+@media (max-width: 900px) {
+    .nav-links {
+        color: red;
+    }}
 /* =======================
    HERO
 ======================= */
