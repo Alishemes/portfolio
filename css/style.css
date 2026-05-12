@@ -13,8 +13,8 @@ html {
     --card: rgba(255,255,255,0.05);
     --text: #f8fafc;
     --muted: #94a3b8;
-    --primary: #8b5cf6;
-    --primary-2: #06b6d4;
+    --primary: #ffcf77;
+    --primary-2: #a5a78af9;
     --border: rgba(255,255,255,0.08);
     --nav-bg: rgba(15,23,42,0.7);
 }
@@ -46,11 +46,12 @@ body.light {
     --bg: #fef9ee;
     --bg-secondary: #e2e8f0;
     --card: rgba(255,255,255,0.75);
-    --text: #0f172a;
+    --text: #000000b1;
     --muted: #475569;
     --border: rgba(0,0,0,0.1);
     --nav-bg: rgba(241,245,249,0.85);
-
+    --primary: #00bcff;
+    --primary-2: #02d6a1;
     background:
         radial-gradient(circle at top left,
         rgba(139,92,246,0.08),
@@ -65,7 +66,9 @@ body.light {
 body.light nav             { background: #fef9ee; }
 body.light .menu-icon span { background: #0f172a; }
 body.light nav ul li a     { color: var(--text); }
-
+body.light nav ul li a:hover {
+    color: #02d6a1;
+}
 
 body.light .project-item {
     border-color: #c4b5fd;
@@ -75,13 +78,33 @@ body.light .project-info h3 { color: #1e293b; }
 body.light .project-info a  { color: #7c3aed; }
 body.light .hero-buttons .hero-social .social-icon {
     color: #1e293b;
+
+}
+body.light .skill-icon:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: linear-gradient(to right, rgb(0, 188, 255), #02d6a1) !important;
+    box-shadow: 0 10px 25px rgb(0, 188, 255,0.25) !important;
+    
+}
+
+body.light .skill-icon:hover i,
+body.light .skill-icon:hover p {
+    color: white !important;
 }
 body.light .skill-icon {
     background: rgba(255,255,255,0.85);
     border-color: rgba(0,0,0,0.1);
     box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
-
+body.light .skill-icon i {
+     color: var(--text);
+}
+body.light .project-info .tools span {
+    color: #ffffffea;
+}
+body.light .project-info a {
+    color: #02d6a1;
+}
 body.light .contact-links a {
     background: rgba(255,255,255,0.85);
     border-color: rgba(0,0,0,0.1);
@@ -92,7 +115,32 @@ body.light footer          { border-color: rgba(0,0,0,0.1); }
 body.light .hero-content p { color: #334155; }
 body.light .social-icon    { border-color: rgba(0,0,0,0.15); color: #1e293b; }
 body.light .btn-secondary  { border-color: rgba(0,0,0,0.2); color: #1e293b; }
+body.light .btn-secondary:hover {
+    color: white;
+    
+}
+body.light .project-item:hover {
+    transform: translateY(-10px);
+    box-shadow:
+        0 10px 30px rgb(2, 214, 161,0.15),
+        0 0 20px rgb(2, 214, 161,0.15);
+}
+body.light .project-item {
+    border-color: #02d6a154;
+}
 
+body.light .contact-links a:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: linear-gradient(
+        to right,
+        var(--primary),
+        var(--primary-2)
+    ) !important;
+    color: #0f172acf;
+    box-shadow:
+        0 10px 30px rgba(0, 188, 255, 0.15),
+        0 0 20px rgba(0, 188, 255, 0.15);
+}
 /* =======================
    NAVBAR
 ======================= */
@@ -203,11 +251,11 @@ nav ul li a:hover::after {
 }
 body.light .skill-icon:hover {
     transform: translateY(-8px) scale(1.05);
-    background: linear-gradient(to right, #8b5cf6, #06b6d4);
+    background: linear-gradient(to right, #ffcf77, #a5a78af9);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 body.light .contact-links a:hover {
-    background: linear-gradient(to right, #8b5cf6, #06b6d4);
+    background: linear-gradient(to right, #ffcf77, #a5a78af9);
     color: #fef9ee;
     transform: translateY(-8px) scale(1.05);
 }
@@ -346,12 +394,12 @@ body.light .contact-links a:hover {
         var(--primary),
         var(--primary-2)
     );
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .btn:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(139,92,246,0.3);
+    box-shadow: 0 5px 15px #ffcf77;
 }
 
 .btn-secondary {
@@ -435,7 +483,7 @@ section h2 {
 
 .project-item {
     background: var(--card);
-    border: 2px solid #402e67;
+    border: 2px solid #a5a78af9;
     border-radius: 22px;
     overflow: hidden;
     backdrop-filter: blur(20px);
@@ -446,8 +494,8 @@ section h2 {
 .project-item:hover {
     transform: translateY(-10px);
     box-shadow:
-        0 10px 30px rgba(0,0,0,0.4),
-        0 0 20px rgba(139,92,246,0.2);
+        0 10px 30px rgb(255, 207, 119,0.15),
+        0 0 20px rgb(255, 207, 119,0.15);
 }
 
 .project-item img {
@@ -481,15 +529,15 @@ section h2 {
         var(--primary),
         var(--primary-2)
     );
-    color: #ffffff;
+    color: #272424be;
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 450;
 }
 
 .project-info a {
-    color: #7964a8;
+    color: #ffcf77;
     text-decoration: none;
     font-weight: bold;
 }
@@ -527,7 +575,7 @@ section h2 {
 
 .skill-icon i {
     font-size: 26px;
-    color: #06b6d4;
+    color: white;
     transition: 0.3s;
 }
 
@@ -541,13 +589,13 @@ section h2 {
 
 .skill-icon:hover {
     transform: translateY(-8px) scale(1.05);
-    background: linear-gradient(to right, #8b5cf6, #06b6d4);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(to right, rgb(255, 207, 119), #a5a78af9);
+    box-shadow: 0 10px 25px rgba(255, 207, 119, 0.25);
 }
 
 .skill-icon:hover i,
 .skill-icon:hover p {
-    color: #fff;
+    color: #0f172a;
 }
 
 /* =======================
@@ -569,17 +617,22 @@ section h2 {
     border: 1px solid var(--border);
     color: var(--text);
     transition: 0.3s;
+    font-size: 16px;
 }
 
 .contact-links a:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.05);
     background: linear-gradient(
         to right,
         var(--primary),
         var(--primary-2)
     );
-    color: white;
+    color: #0f172acf;
+        box-shadow:
+        0 10px 30px rgb(255, 207, 119,0.15),
+        0 0 20px rgb(255, 207, 119,0.15);
 }
+
 
 /* =======================
    FOOTER
